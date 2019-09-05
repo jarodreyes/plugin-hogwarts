@@ -36,29 +36,24 @@ class CharacterComponent extends Component {
     }
 
     render() {
-        if(this.props && this.props.task && this.props.task.attributes) {
-            console.log(this);
+        const number = _.get(this.props, 'task.attributes.name');
+        if(number) {
             let phone = this.props.task.attributes.name;
             let name = localStorage.getItem(phone);
             let user = _.find(users, { 'name': name });
             return <CharacterCard>
-            `
-                <h1 class="Twilio">User Info</h1>
+                <h1 className="Twilio">User Info</h1>
                 <p>Name: {user.name}</p>
                 <img src={user.image} />
-                <span class="Twilio">House: {user.house}</span>
+                <span className="Twilio">House: {user.house}</span>
                 <br / >
                 <p>Birthday: {user.dateOfBirth}</p>
                 <br / >
-                <b>Student: {user.hogwartsStudent ? 'Yes': 'No'}</b>
-            `
-                
+                <b>Student: {user.hogwartsStudent ? 'Yes': 'No'}</b>   
             </CharacterCard>;
         } else {
             return <CharacterCard>
-            `
                 <h1 class="Twilio">User Info</h1>
-            `
             </CharacterCard>;
         }
         
