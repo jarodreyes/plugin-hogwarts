@@ -36,8 +36,7 @@ class CharacterComponent extends Component {
     }
 
     render() {
-        const number = _.get(this.props, 'task.attributes.name');
-        if(number) {
+        if(number && localStorage.getItem(number)) {
             let phone = this.props.task.attributes.name;
             let name = localStorage.getItem(phone);
             let user = _.find(users, { 'name': name });
