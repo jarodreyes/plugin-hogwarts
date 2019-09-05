@@ -36,7 +36,6 @@ class CharacterComponent extends Component {
     }
 
     render() {
-        console.log(this.props.task.attributes.name)
         if(this.props && this.props.task && this.props.task.attributes) {
             console.log(this);
             let phone = this.props.task.attributes.name;
