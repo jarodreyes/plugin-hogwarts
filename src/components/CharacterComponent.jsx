@@ -4,9 +4,7 @@ import styled from 'react-emotion';
 
 const _ = require('lodash');
 const users = require('./characters.json');
-
-const CharacterCard = styled("div")
-    `
+const CharacterCard = styled("div")`
     padding: 10px;
     margin: 0px;
     display: flex;
@@ -25,8 +23,7 @@ const CharacterCard = styled("div")
     }
     img {
         height:250px;
-    }
-    `;
+    }`;
 
 
 class CharacterComponent extends Component {
@@ -36,9 +33,9 @@ class CharacterComponent extends Component {
     }
 
     render() {
+        const number = _.get(this.props, 'task.attributes.name');
         if(number && localStorage.getItem(number)) {
-            let phone = this.props.task.attributes.name;
-            let name = localStorage.getItem(phone);
+            let name = localStorage.getItem(number);
             let user = _.find(users, { 'name': name });
             return <CharacterCard>
                 <h1 className="Twilio">User Info</h1>
