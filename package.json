@@ -25,7 +25,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "flex-plugin": "next",
     "flex-plugin-scripts": "next",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-scripts": "^3.0.0",
